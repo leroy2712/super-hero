@@ -14,5 +14,17 @@ public class App {
             model.put("template", "templates/index.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        post("/superheroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String power = request.queryParams("power");
+            String weakness = request.queryParams("weakness");
+
+            Super superHero = new Super(name, age, power, weakness);
+
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
     }
 }

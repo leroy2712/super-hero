@@ -1,3 +1,23 @@
 body {
     background-image: url("/images/gaming-pattern.png");
 }
+
+/* #name, #age, #power, #weakness {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#submit-superhero {
+    width: 100%;
+    background-color: #000000;
+    border-radius: 0px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+#submit-superhero:hover{
+    background-color: #353535
+} */
