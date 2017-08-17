@@ -23,6 +23,8 @@ public class App {
             String weakness = request.queryParams("weakness");
 
             Super superHero = new Super(name, age, power, weakness);
+            //created a hero instance. You should create a new class where you store your object within object. New class 
+            //shoud be the category from which users can select heros(the teams basically)
 
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
