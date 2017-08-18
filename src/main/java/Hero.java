@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Super {
+public class Hero {
     private String mName;
     private int mAge;
     private String mPower;
     private String mWeakness;
-    private static List<Super> instances = new ArrayList<Super>();
+    private static List<Hero> instances = new ArrayList<Hero>();
 
-    public Super(String name, int age, String power, String weakness){
+    public Hero(String name, int age, String power, String weakness){
         mName = name;
         mAge = age;
         mPower = power;
@@ -32,7 +32,7 @@ public class Super {
         return mWeakness;
     }
 
-    public static List<Super> all (){
+    public static List<Hero> all (){
         return instances;
     }
 }
