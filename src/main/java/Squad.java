@@ -42,18 +42,19 @@ public class Squad {
         return mId;
     }
 
-    //returns heroes found in a certain Squad
+    public static Squad find(int id) {
+        try {
+            return instances.get(id - 1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+    }
+
     public List<Hero> getHeroes() {
         return mHeros;
     }
 
-    // adds heroes to a Squad
     public void addHero(Hero hero) {
         mHeros.add(hero);
-    }
-
-    //finds a hero with id
-    public static Squad find(int id) {
-        return instances.get(id - 1);
     }
 }
