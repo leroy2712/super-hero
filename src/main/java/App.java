@@ -1,5 +1,7 @@
 import java.util.Map;
 
+import javax.xml.ws.RespectBinding;
+
 import org.eclipse.jetty.http.MetaData.Request;
 
 import java.util.HashMap;
@@ -27,12 +29,14 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        //Route with form from which user can create a new form
         get("/squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("template", "templates/squads-form.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        //Create a new super hero squad
         post("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 
@@ -44,5 +48,24 @@ public class App {
             model.put("template", "templates/squad-success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        //Get details about an individual hero
+        get("/squads/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+            model.put("squad", squad);
+            model.put("template", "templates/squad.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("squads/:id/heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+			Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+			model.put("squad", squad);
+			model.put("template", "templates/hero-form.vtl");
+			return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //Create heroes and add them to a squad
     }
 }
