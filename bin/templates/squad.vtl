@@ -1,17 +1,31 @@
-<div class="header">
-	<h1>$squad.getName():</h1>
-<div>
-<p>slogan:$squad.getCause() <br>Maximum size:$squad.getMax();
-<ul>
-	#foreach($hero in $squad.getHeroes())
-		<li>
-			<h5>$hero.getName()</h5>
-			<h5>$hero.getAge()</h5>
-			<h5>$hero.getPower()</h5>
-			<h5>$hero.getWeakness()</h5>
-		</li>
-	#end
-</ul>
-
-<p><a href="/squads/$squad.getId()/heroes/new">Add a Hero to this team</a></p>
-<p><a href="/squads">All Squads</a></p>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-6">
+    <h3 class="text-center">Current Heros</h3>
+	<table class="table">
+	  <thead>
+	    <tr>
+		  <td>Name</td>
+		  <td>Age</td>
+		  <td>Power</td>
+		  <td>Weakness</td>
+		</tr>
+	  </thead>
+	  <tbody>
+	    #foreach($hero in $squad.getHeroes())
+		<tr>
+		  <td>$hero.getName()</td>
+		  <td>$hero.getAge()</td>
+		  <td>$hero.getPower()</td>
+		  <td>$hero.getWeakness()</td>
+		</tr>
+		#end
+	  </tbody>
+	</table>
+  </div>
+  <div class="col-sm-4">
+    <a href="/squads/$squad.getId()/heroes/new" class="squads">Add a Hero to this team</a>
+	<a href="/squads" class="squads">All Squads</a>
+  </div>
+  <div class="col-sm-1"></div>
+</div>

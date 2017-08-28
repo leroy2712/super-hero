@@ -1,6 +1,3 @@
-body {
-    background-image: url("/images/gaming-pattern.png");
-}
 
 /* #name, #age, #power, #weakness {
     width: 100%;
@@ -21,3 +18,72 @@ body {
 #submit-superhero:hover{
     background-color: #353535
 } */
+
+body {
+    background-color: #d6d6d6;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+#nav {
+    text-decoration: none;
+    color: #5b5b5b;
+}
+
+#nav:hover {
+    color: #000000;
+}
+
+#nav:visited {
+    color: #5b5b5b;
+}
+
+.navbar-inverse {
+    border-top: none;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+    background-color: #d6d6d6;
+    font-size: 3em;
+    padding-bottom: 30px;
+}
+
+#index-main {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #ffffff;
+}
+
+.squads {
+    background-color: #590000;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 1.2em;
+    border-radius: 0px;
+    width: 100%;
+    margin-bottom: 25px;
+    border: 1px solid #590000;
+    color: #ffffff;
+}
+
+.squads:hover {
+    background-color: #444444;
+    color: #ffffff;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+#squad-conainer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#name, #size, #cause, #age, #power, #weakness {
+    height: 50px;
+    font-size: 1.2em;
+    border-radius: 0px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
